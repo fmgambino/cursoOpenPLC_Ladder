@@ -1,8 +1,7 @@
 
 # 🧠 Curso Completo: Programación de PLC con OpenPLC en Lenguaje LADDER usando PLC OTA32
 
-![Logo de Electrónica Gambino](https://electronicagambino.com/logo.png)
-![Imagen de presentación del curso](https://electronicagambino.com/curso-plc-openplc.png)
+![Logo de Electrónica Gambino](https://electronicagambino.com/wp-content/uploads/elementor/thumbs/cropped-Electronica-Gambino-e1684335474114-q6losum0uq8caxhait9doqxx83gv53yq2d8g8oiv7o.png)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/tu_usuario/tu_repositorio?style=for-the-badge) 
 ![GitHub issues](https://img.shields.io/github/issues/tu_usuario/tu_repositorio?style=for-the-badge) 
@@ -10,6 +9,9 @@
 ![GitHub stars](https://img.shields.io/github/stars/tu_usuario/tu_repositorio?style=for-the-badge)
 
 ---
+<p align="center">
+  <img src="https://electronicagambino.com/wp-content/uploads/2025/04/cursoOpenPLC_ESP32-500x300.png" alt="Imagen de presentación del curso" />
+</p>
 
 ## 📌 Descripción del Curso
 
@@ -36,7 +38,7 @@ No importa si nunca tocaste un PLC antes: vas a comenzar desde los conceptos má
 - 💻 **Modalidad:** 100% Online – Aula Virtual de Electrónica Gambino  
 - 🎓 **Nivel:** Principiante (no se requiere experiencia previa)  
 - 🔧 **Simulación incluida**: Ideal si aún no contás con el PLC físico  
-- 🛒 **Adquirí el PLC OTA32:** 👉 [¡Compra acá!](https://electronicagambino.com/producto/plc-ota32-v1)
+- 🛒 **Adquirí el EDUINO PLC32:** 👉 [¡Compra acá!](https://electronicagambino.com/producto/plc-ota32-v1)
 
 ---
 
@@ -99,7 +101,7 @@ No importa si nunca tocaste un PLC antes: vas a comenzar desde los conceptos má
 
 🔹 Cloná el repositorio:
 ```bash
-git clone https://github.com/tu_usuario/tu_repositorio.git
+git clone https://github.com/fmgambino/cursoOpenPLC_Ladder
 ```
 
 🔹 Abrí los ejemplos y ejercicios con **OpenPLC Editor**.  
