@@ -1,0 +1,52 @@
+TYPE
+  LOGLEVEL : (CRITICAL, WARNING, INFO, DEBUG) := INFO;
+END_TYPE
+
+FUNCTION_BLOCK LOGGER
+  VAR_INPUT
+    TRIG : BOOL;
+    MSG : STRING;
+    LEVEL : LOGLEVEL := INFO;
+  END_VAR
+  VAR
+    TRIG0 : BOOL;
+  END_VAR
+
+  IF TRIG AND NOT TRIG0 THEN
+  {{
+   LogMessage(GetFbVar(LEVEL),(char*)GetFbVar(MSG, .body),GetFbVar(MSG, .len));
+  }}
+  END_IF;
+  TRIG0:=TRIG;
+END_FUNCTION_BLOCK
+
+
+PROGRAM Memorias
+  VAR
+    I_NA0 AT %IX0.0 : BOOL;
+    I_NA1 AT %IX0.1 : BOOL;
+  END_VAR
+  VAR
+    M0 : BOOL;
+  END_VAR
+  VAR
+    Q_NA AT %QX0.1 : BOOL;
+  END_VAR
+
+  Q_NA := M0;
+  IF I_NA1 THEN
+    M0 := FALSE; (*reset*)
+  END_IF;
+  IF I_NA0 THEN
+    M0 := TRUE; (*set*)
+  END_IF;
+END_PROGRAM
+
+
+CONFIGURATION Config0
+
+  RESOURCE Res0 ON PLC
+    TASK task0(INTERVAL := T#20ms,PRIORITY := 0);
+    PROGRAM instance0 WITH task0 : Memorias;
+  END_RESOURCE
+END_CONFIGURATION
