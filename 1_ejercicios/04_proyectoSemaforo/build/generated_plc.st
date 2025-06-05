@@ -10,10 +10,7 @@ PROGRAM semaforo
     MG : BOOL;
     TON_T1 : TON;
     TON_T3 : TON;
-    CTU0 : CTU;
-    TOF0 : TOF;
-    TON0 : TON;
-    R_TRIG1 : R_TRIG;
+    TOM_T2 : TON;
   END_VAR
 
   IF NOT(P_START) THEN
@@ -26,7 +23,7 @@ PROGRAM semaforo
   IF TON_T1.Q THEN
     MY := TRUE; (*set*)
   END_IF;
-  TON_T3(IN := aux_Y, PT := T#3s);
+  TON_T3(IN := MG, PT := T#3s);
   IF TON_T3.Q THEN
     MG := FALSE; (*reset*)
   END_IF;
@@ -34,14 +31,12 @@ PROGRAM semaforo
   LR := MR;
   LY := MY;
   LG := MG;
-  TON0(IN := NOT(MY), PT := T#500ms);
-  TOF0(IN := TON0.Q);
-  MY := TOF0.Q;
-  R_TRIG1(CLK := MY);
-  CTU0(CU := R_TRIG1.Q, R := aux_Y, PV := 3);
-  aux_Y := CTU0.Q;
-  IF aux_Y THEN
+  TOM_T2(IN := MY, PT := T#3s);
+  IF TOM_T2.Q THEN
     MY := FALSE; (*reset*)
+  END_IF;
+  IF TOM_T2.Q THEN
+    MG := TRUE; (*set*)
   END_IF;
 END_PROGRAM
 

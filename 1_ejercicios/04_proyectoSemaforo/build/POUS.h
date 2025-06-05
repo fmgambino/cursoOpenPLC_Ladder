@@ -45,10 +45,7 @@ typedef struct {
   __DECLARE_VAR(BOOL,MG)
   TON TON_T1;
   TON TON_T3;
-  CTU CTU0;
-  TOF TOF0;
-  TON TON0;
-  R_TRIG R_TRIG1;
+  TON TOM_T2;
 
 } SEMAFORO;
 
